@@ -18,6 +18,21 @@ export const metadata: Metadata = {
   description: "Blog especializado en trading con indicadores premium para TradingView. Análisis técnico, estrategias con IA, y tutoriales exclusivos.",
   keywords: "trading, indicadores, TradingView, análisis técnico, criptomonedas, forex, estrategias",
   authors: [{ name: "APIDevs Team" }],
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon_io/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon_io/favicon-32x32.png', sizes: '32x32', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/favicon_io/apple-touch-icon.png' }
+    ],
+    other: [
+      { rel: 'icon', url: '/favicon_io/android-chrome-192x192.png', sizes: '192x192' },
+      { rel: 'icon', url: '/favicon_io/android-chrome-512x512.png', sizes: '512x512' }
+    ]
+  },
+  manifest: '/favicon_io/site.webmanifest',
   openGraph: {
     title: "APIDevs Trading Blog",
     description: "Análisis técnico avanzado y estrategias de trading con IA",
@@ -25,7 +40,7 @@ export const metadata: Metadata = {
     siteName: "APIDevs Blog",
     images: [
       {
-        url: "/og-image.png",
+        url: "/logos/logo-horizontal-verde.png",
         width: 1200,
         height: 630,
       },
@@ -37,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "APIDevs Trading Blog",
     description: "Análisis técnico avanzado y estrategias de trading con IA",
-    images: ["/og-image.png"],
+    images: ["/logos/logo-horizontal-verde.png"],
   },
 };
 

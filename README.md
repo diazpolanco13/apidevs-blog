@@ -1,36 +1,148 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 APIDevs Trading Blog
 
-## Getting Started
+<div align="center">
+  <img src="public/logos/logo-horizontal-verde.png" alt="APIDevs Logo" width="400"/>
+  
+  <p align="center">
+    <strong>Blog oficial de APIDevs Trading Platform</strong>
+  </p>
+  
+  <p align="center">
+    Análisis técnico avanzado, estrategias de trading con IA, y guías exclusivas sobre indicadores premium para TradingView
+  </p>
 
-First, run the development server:
+  <p align="center">
+    <a href="https://apidevs-react.vercel.app">🌐 Plataforma Principal</a> •
+    <a href="https://blog.apidevs.io">📝 Blog en Vivo</a> •
+    <a href="#-características">✨ Características</a> •
+    <a href="#-instalación">🛠️ Instalación</a>
+  </p>
+</div>
 
+---
+
+## 📊 Sobre el Proyecto
+
+APIDevs Trading Blog es el complemento perfecto para nuestra plataforma de trading, proporcionando contenido educativo de alta calidad para más de **3,500+ traders activos**. Construido con las últimas tecnologías para ofrecer una experiencia de lectura excepcional.
+
+## ✨ Características
+
+- 🎨 **Diseño Moderno** - Interfaz inspirada en LuxAlgo con identidad visual única
+- 🌓 **Dark/Light Mode** - Tema adaptable para lectura cómoda
+- 🔍 **Búsqueda Inteligente** - Encuentra contenido al instante
+- 📱 **100% Responsive** - Optimizado para todos los dispositivos
+- ⚡ **Ultra Rápido** - Construido con Next.js 15 y optimizaciones de rendimiento
+- 📊 **Categorías Especializadas**:
+  - Technical Analysis
+  - Strategies & Tips
+  - AI & Technology
+  - Indicadores
+  - Product Updates
+
+## 🛠️ Stack Tecnológico
+
+- **Framework:** Next.js 15.5.3
+- **CMS:** Sanity Studio v4
+- **Estilos:** Tailwind CSS 3.4
+- **Lenguaje:** TypeScript
+- **Temas:** next-themes
+- **Iconos:** lucide-react
+- **Deployment:** Vercel
+
+## 🚀 Instalación
+
+### Prerrequisitos
+
+- Node.js 20+
+- npm o yarn
+- Cuenta en Sanity.io
+
+### Pasos de Instalación
+
+1. **Clonar el repositorio**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/diazpolanco13/apidevs-blog.git
+cd apidevs-blog
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Instalar dependencias**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Configurar variables de entorno**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Crear archivo `.env.local`:
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=tu_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2024-01-01
+```
 
-## Learn More
+4. **Ejecutar en desarrollo**
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+El blog estará disponible en `http://localhost:3001`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Gestión de Contenido
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Acceder a Sanity Studio
 
-## Deploy on Vercel
+- Local: `http://localhost:3001/studio`
+- Producción: `https://tu-dominio.com/studio`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Crear Contenido
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Crear categorías (Technical Analysis, Estrategias, etc.)
+2. Añadir autor con perfil completo
+3. Publicar posts con metadata de trading
+
+## 🌐 Deployment
+
+### Vercel (Recomendado)
+
+1. Conecta tu repositorio en [Vercel](https://vercel.com)
+2. Configura las variables de entorno
+3. Deploy automático con cada push
+
+## 📊 Estadísticas del Proyecto
+
+- 🎯 **3,500+** Traders Activos
+- 📈 **160** Criptomonedas en Tiempo Real
+- ⚡ **99.9%** Uptime Garantizado
+- 🏆 **87%** Precisión de Señales
+
+## 🤝 Contribuir
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Fork el proyecto
+2. Crea tu feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push al branch (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto es privado y propiedad de APIDevs, Inc. Todos los derechos reservados.
+
+## 👨‍💻 Autor
+
+**Carlos Diaz**
+- GitHub: [@diazpolanco13](https://github.com/diazpolanco13)
+- Email: diazpolanco13@gmail.com
+
+## 🙏 Agradecimientos
+
+- Inspiración de diseño: LuxAlgo
+- Construido con Next.js y Sanity
+- Desplegado en Vercel
+
+---
+
+<div align="center">
+  <p>Hecho con 💚 por el equipo de APIDevs</p>
+  <p>© 2024 APIDevs, Inc. Todos los derechos reservados.</p>
+</div>

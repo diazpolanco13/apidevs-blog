@@ -7,11 +7,18 @@
   --foreground: #171717;
   --font-inter: 'Inter', sans-serif;
   --font-orbitron: 'Orbitron', monospace;
+  --neon-green: #00ff88;
+  --neon-green-rgb: 0, 255, 136;
+  --dark-green: #10b981;
+  --cyber-blue: #00d4ff;
+  --cyber-purple: #9945ff;
 }
 
-.dark {
-  --background: #030712;
+:root.dark {
+  --background: #0a0b0d;
   --foreground: #ededed;
+  --card-bg: rgba(17, 24, 39, 0.8);
+  --glass-bg: rgba(255, 255, 255, 0.03);
 }
 
 * {
@@ -88,10 +95,123 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #00ff88, #10b981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 255, 136, 0.1);
+}
+
+/* Neon glow effects ENHANCED */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5),
+              0 0 40px rgba(0, 255, 136, 0.3),
+              0 0 60px rgba(0, 255, 136, 0.2),
+              inset 0 0 20px rgba(0, 255, 136, 0.05);
+}
+
+.neon-border {
+  position: relative;
+  border: 1px solid transparent;
+  background: linear-gradient(#000, #000) padding-box,
+              linear-gradient(45deg, #00ff88, #00d4ff, #9945ff) border-box;
+}
+
+.neon-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(45deg, #00ff88, #00d4ff, #9945ff);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  animation: neon-pulse 3s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.neon-text {
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.8),
+               0 0 20px rgba(0, 255, 136, 0.6),
+               0 0 30px rgba(0, 255, 136, 0.4),
+               0 0 40px rgba(0, 255, 136, 0.2);
+  animation: neon-flicker 2s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; }
+  33% { opacity: 0.9; }
+  66% { opacity: 0.95; }
+}
+
+/* Floating animation */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* 3D card effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg) scale(1.05);
+}
+
+/* Gradient animations */
+.gradient-animate {
+  background: linear-gradient(270deg, #00ff88, #00d4ff, #9945ff, #00ff88);
+  background-size: 400% 400%;
+  animation: gradient-shift 10s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Cyber grid background */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: -1px -1px;
+  animation: grid-move 10s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { background-position: -1px -1px; }
+  100% { background-position: 50px 50px; }
 }
 
 /* Card hover effects */

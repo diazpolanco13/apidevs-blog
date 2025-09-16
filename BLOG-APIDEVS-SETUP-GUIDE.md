@@ -1,4 +1,4 @@
-# 📝 APIDevs Trading Blog - Guía Completa de Setup y Configuración
+image.png# 📝 APIDevs Trading Blog - Guía Completa de Setup y Configuración
 
 ## 🎯 Descripción del Proyecto
 

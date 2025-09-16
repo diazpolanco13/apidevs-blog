@@ -1,8 +1,8 @@
 import { groq } from 'next-sanity'
 import { client } from '@/sanity/lib/client'
 import BlogHeader from '@/components/BlogHeader'
-import PostGrid from '@/components/PostGrid'
-import CategoryFilter from '@/components/CategoryFilter'
+import LuxAlgoStyleLayout from '@/components/LuxAlgoStyleLayout'
+import Footer from '@/components/Footer'
 
 const postsQuery = groq`
   *[_type == "post"] | order(publishedAt desc) {
@@ -27,7 +27,8 @@ const categoriesQuery = groq`
     slug,
     description,
     color,
-    icon
+    icon,
+    "count": count(*[_type == "post" && references(^._id)])
   }
 `
 
@@ -37,43 +38,36 @@ export default async function HomePage() {
     client.fetch(categoriesQuery)
   ])
 
+  // Categorize posts
+  const recentPosts = posts.slice(0, 8)
+  const featuredPost = posts.find(p => p.featured) || posts[0]
+  
+  // Group posts by category
+  const technicalAnalysisPosts = posts.filter(p => 
+    p.categories?.some((c: any) => c.title === 'Technical Analysis')
+  ).slice(0, 4)
+  
+  const strategiesPosts = posts.filter(p => 
+    p.categories?.some((c: any) => c.title === 'Estrategias')
+  ).slice(0, 4)
+  
+  const aiTechPosts = posts.filter(p => 
+    p.categories?.some((c: any) => c.title === 'IA & Technology')
+  ).slice(0, 4)
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors">
+    <div className="min-h-screen bg-[#0f1419] text-white">
       <BlogHeader />
-      
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            APIDevs Trading <span className="text-green-500">Blog</span>
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Análisis técnico avanzado, estrategias de trading con IA, y guías exclusivas 
-            sobre nuestros indicadores premium para TradingView
-          </p>
-        </div>
-
-        {/* Featured Posts */}
-        {posts.filter(p => p.featured).length > 0 && (
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-              📌 Artículos Destacados
-            </h2>
-            <PostGrid posts={posts.filter(p => p.featured)} featured />
-          </section>
-        )}
-
-        {/* Category Filter */}
-        <CategoryFilter categories={categories} />
-
-        {/* All Posts */}
-        <section>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
-            📚 Todos los Artículos
-          </h2>
-          <PostGrid posts={posts.filter(p => !p.featured)} />
-        </section>
-      </main>
+      <LuxAlgoStyleLayout 
+        posts={posts}
+        categories={categories}
+        recentPosts={recentPosts}
+        featuredPost={featuredPost}
+        technicalAnalysisPosts={technicalAnalysisPosts}
+        strategiesPosts={strategiesPosts}
+        aiTechPosts={aiTechPosts}
+      />
+      <Footer />
     </div>
   )
 }
